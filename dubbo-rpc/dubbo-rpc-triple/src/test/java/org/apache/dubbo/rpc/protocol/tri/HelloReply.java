@@ -20,7 +20,7 @@ package org.apache.dubbo.rpc.protocol.tri;
 
 import com.google.protobuf.Message;
 
-public final class HelloReply extends com.google.protobuf.GeneratedMessageV3 {
+public final class HelloReply<T> extends com.google.protobuf.GeneratedMessageV3 {
 
     @Override
     protected FieldAccessorTable internalGetFieldAccessorTable() {

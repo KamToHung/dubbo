@@ -64,7 +64,7 @@ public interface DescriptorService {
      * @param reply
      * @return
      */
-    HelloReply sayHello(HelloReply reply);
+    HelloReply<Void> sayHello(HelloReply reply);
 
     void sayHelloServerStream(HelloReply request, StreamObserver<HelloReply> reply);
 
