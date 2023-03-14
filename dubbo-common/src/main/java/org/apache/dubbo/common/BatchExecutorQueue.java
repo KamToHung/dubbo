@@ -55,6 +55,7 @@ public class BatchExecutorQueue<T> {
         try {
             Queue<T> snapshot = new LinkedList<>();
             T item;
+            // 如果queue不停加入元素是否可能死循环？
             while ((item = queue.poll()) != null) {
                 snapshot.add(item);
             }

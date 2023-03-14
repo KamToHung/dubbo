@@ -51,7 +51,7 @@ public class DubboServiceProviderBootstrap {
         RegistryConfig serviceRegistry = new RegistryConfig();
         serviceRegistry.setId("serviceRegistry");
         serviceRegistry.setAddress(ZookeeperRegistryCenterConfig.getConnectionAddress()+"?registry-type=service");
-
+        serviceRegistry.setTimeout(3000000);
         ServiceConfig<EchoService> echoService = new ServiceConfig<>();
         echoService.setInterface(EchoService.class.getName());
         echoService.setRef(new EchoServiceImpl());

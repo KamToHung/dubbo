@@ -152,7 +152,7 @@ class ApplicationModelTest {
     @Test
     void testCopyOnWriteArrayListIteratorAndRemove() throws InterruptedException {
         List<Integer> cur = new ArrayList<>();
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 10000000; i++) {
             cur.add(i);
         }
         List<Integer> myList = new CopyOnWriteArrayList<>(cur);

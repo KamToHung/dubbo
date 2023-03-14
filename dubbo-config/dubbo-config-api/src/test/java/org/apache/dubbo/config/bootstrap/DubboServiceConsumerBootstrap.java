@@ -36,7 +36,7 @@ public class DubboServiceConsumerBootstrap {
 //                .registry(builder -> builder.address("eureka://127.0.0.1:8761?registry-type=service&subscribed-services=dubbo-provider-demo"))
 
                 // Zookeeper
-                .registry("zookeeper", builder -> builder.address(ZookeeperRegistryCenterConfig.getConnectionAddress()+"?registry-type=service&subscribed-services=dubbo-provider-demo"))
+                .registry("zookeeper", builder -> builder.timeout(3000000).address(ZookeeperRegistryCenterConfig.getConnectionAddress()+"?timeout=300000&registry-type=service&subscribed-services=dubbo-provider-demo"))
                 .metadataReport(new MetadataReportConfig(ZookeeperRegistryCenterConfig.getConnectionAddress()))
 
                 // Nacos

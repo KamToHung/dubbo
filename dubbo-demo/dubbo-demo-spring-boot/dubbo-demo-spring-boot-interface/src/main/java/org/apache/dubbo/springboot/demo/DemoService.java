@@ -16,6 +16,7 @@
  */
 package org.apache.dubbo.springboot.demo;
 
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public interface DemoService {
@@ -25,5 +26,7 @@ public interface DemoService {
     default CompletableFuture<String> sayHelloAsync(String name) {
         return CompletableFuture.completedFuture(sayHello(name));
     }
+
+    Map<String, User> getUsers();
 
 }

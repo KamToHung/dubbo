@@ -72,6 +72,7 @@ public class InvokerInvocationHandler implements InvocationHandler {
             rpcInvocation.put(Constants.CONSUMER_MODEL, serviceModel);
             rpcInvocation.put(Constants.METHOD_MODEL, ((ConsumerModel) serviceModel).getMethodModel(method));
         }
-        return InvocationUtil.invoke(invoker, rpcInvocation);
+        Object invoke = InvocationUtil.invoke(invoker, rpcInvocation);
+        return invoke;
     }
 }

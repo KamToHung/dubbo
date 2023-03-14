@@ -64,7 +64,7 @@ public abstract class ClientToServerTest {
 
     @Test
     void testFuture() throws Exception {
-        CompletableFuture<Object> future = client.request(new World("world"));
+        CompletableFuture<Object> future = client.request(new World("world"), 100000);
         Hello result = (Hello) future.get();
         Assertions.assertEquals("hello,world", result.getName());
     }

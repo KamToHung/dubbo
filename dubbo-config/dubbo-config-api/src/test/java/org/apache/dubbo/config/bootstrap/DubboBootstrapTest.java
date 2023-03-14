@@ -60,6 +60,7 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
 
 import static org.apache.dubbo.common.constants.CommonConstants.DUBBO_MONITOR_ADDRESS;
 import static org.apache.dubbo.common.constants.CommonConstants.REMOTE_METADATA_STORAGE_TYPE;
@@ -231,7 +232,7 @@ class DubboBootstrapTest {
     }
 
     @Test
-    void testBootstrapStart() {
+    void testBootstrapStart() throws InterruptedException {
         ServiceConfig<DemoService> service = new ServiceConfig<>();
         service.setInterface(DemoService.class);
         service.setRef(new DemoServiceImpl());
@@ -251,6 +252,7 @@ class DubboBootstrapTest {
         DefaultApplicationDeployer applicationDeployer = getApplicationDeployer(applicationModel);
         Assertions.assertNotNull(ReflectUtils.getFieldValue(applicationDeployer, "asyncMetadataFuture"));
         Assertions.assertTrue(applicationModel.getDefaultModule().getServiceRepository().getExportedServices().size() > 0);
+        new CountDownLatch(1).await();
     }
 
     private DefaultApplicationDeployer getApplicationDeployer(ApplicationModel applicationModel) {
