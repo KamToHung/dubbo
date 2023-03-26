@@ -23,7 +23,7 @@ public enum MetricsKey {
     // provider metrics key
     METRIC_REQUESTS("dubbo.%s.requests.total", "Total Requests"),
     METRIC_REQUESTS_SUCCEED("dubbo.%s.requests.succeed.total", "Total Succeed Requests"),
-    METRIC_REQUEST_BUSINESS_FAILED("dubbo.%s.requests.business.failed.total","Total Failed Business Requests"),
+    METRIC_REQUEST_BUSINESS_FAILED("dubbo.%s.requests.business.failed.total", "Total Failed Business Requests"),
 
     METRIC_REQUESTS_PROCESSING("dubbo.%s.requests.processing", "Processing Requests"),
     METRIC_REQUESTS_TIMEOUT("dubbo.%s.requests.timeout.total", "Total Timeout Failed Requests"),
@@ -81,6 +81,7 @@ public enum MetricsKey {
     THREAD_POOL_ACTIVE_SIZE("dubbo.thread.pool.active.size", "Thread Pool Active Size"),
     THREAD_POOL_THREAD_COUNT("dubbo.thread.pool.thread.count", "Thread Pool Thread Count"),
     THREAD_POOL_QUEUE_SIZE("dubbo.thread.pool.queue.size", "Thread Pool Queue Size"),
+    THREAD_POOL_THREAD_REJECT_COUNT("dubbo.thread.pool.reject.thread.count", "Thread Pool Reject Thread Count"),
 
     // metadata push metrics key
     METADATA_PUSH_METRIC_NUM("dubbo.metadata.push.num.total", "Total Push Num"),
@@ -101,7 +102,14 @@ public enum MetricsKey {
     SERVICE_SUBSCRIBE_METRIC_NUM("dubbo.registry.subscribe.service.num.total", "Total Service-Level Subscribe Num"),
     SERVICE_SUBSCRIBE_METRIC_NUM_SUCCEED("dubbo.registry.subscribe.service.num.succeed.total", "Succeed Service-Level Num"),
     SERVICE_SUBSCRIBE_METRIC_NUM_FAILED("dubbo.registry.subscribe.service.num.failed.total", "Failed Service-Level Num"),
-    METADATA_GIT_COMMITID_METRIC("git.commit.id","Git Commit Id Metrics");
+    // store provider metadata service key
+    STORE_PROVIDER_METADATA("dubbo.metadata.store.provider.total", "Store Provider Metadata"),
+
+    STORE_PROVIDER_METADATA_SUCCEED("dubbo.metadata.store.provider.succeed.total", "Succeed Store Provider Metadata"),
+
+    STORE_PROVIDER_METADATA_FAILED("dubbo.metadata.store.provider.failed.total", "Failed Store Provider Metadata"),
+    METADATA_GIT_COMMITID_METRIC("git.commit.id", "Git Commit Id Metrics"),
+
     // consumer metrics key
     ;
 
